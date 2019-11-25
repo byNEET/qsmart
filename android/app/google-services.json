@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "916377907515",
+    "firebase_url": "https://qsmart-2019.firebaseio.com",
+    "project_id": "qsmart-2019",
+    "storage_bucket": "qsmart-2019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916377907515:android:3da0927e06ffe50b35071e",
+        "android_client_info": {
+          "package_name": "com.byneet.qsmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916377907515-8g3l8dhnvqg4tpd9mhbum6gidjbmmtpd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.byneet.qsmart",
+            "certificate_hash": "3e7493acde47825236f9724cbe23b66d33610d78"
+          }
+        },
+        {
+          "client_id": "916377907515-47u521bcagbl9ostp7eac74v3o1jjacf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAicsBfWfL9TOnbRUWcJSDH6WlDQHr8kQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916377907515-47u521bcagbl9ostp7eac74v3o1jjacf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

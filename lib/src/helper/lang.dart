@@ -1,0 +1,16 @@
+class Lang {
+  static String qsmart = "Rumah Belajar Q Smart";
+  static String sejarahJudul = "Sejarah Singkat Rumah Belajar Q_SM@ART";
+  static String filosofi =
+      "Rumah Belajar Q_Sm@rt merupakan Rumah Belajar Yang Senantiasa Berupaya Menciptakan Generasi Muda Yang Cerdas, Mandiri, Handal, Bertanggung Jawab dan Berdisiplin Tinggi.";
+  static String visi =
+      "1.Menjadi salah satu rumah belajar unggulan dalam menciptakan pola tanggung jawab dan kedisiplinan sehingga menghargai sebuah proses kehidupan.\n2.Menjadi salah satu rumah belajar yang menciptakan pola pikir yang cerdas, kreatif, aktif dan terampil.\n3.Menjadikan penerus bangsa yang berbudi  pekerti luhur , mempunyai jiwa empati yang tinggi dan menjaga rasa kekeluargaan bagi sesama.\n4.Menjadi salah satu rumah belajar yang nyaman dan mengasyikkan.";
+  static String misi =
+      "1.	Meningkatkan mutu pendidikan yang tidak hanya cerdas atau pintar saja tetapi mampu berpikir kritis dan tanggap terhadap lingkungan dan masyarakat di sekitarnya.\n2.	Memberikan yang terbaik bagi siswa dan menjadikan rumah belajar tempat yang nyaman dan mengasyikkan untuk belajar dan berkarya.\n3.	Melaksanakan semua harapan siswa untuk mewujudkan masa depan yang indah dan penuh manfaat bagi sesama.\n4.	Menyelenggarakan suatu kegiatan belajar mengajar untuk meningkatkan kecerdasan dan mewujudkan generasi yang berakhlak mulia.";
+  static String sejarahIsi1 =
+      "        Berdiri sejak 16 Agustus 2009, Rumah Belajar Q_Sm@rt berusaha untuk menjadi salah satu rumah belajar yang senantiasa memberi kontribusi positif terhadap perkembangan dunia pendidikan. Berawal dari sebuah keprihatinan Rumah Belajar Q_Sm@rt terus berubah setiap saat kearah yang dinamis dan secara perlahan namun pasti bertransformasi menjadi sesuatu yang lebih besar tanpa meninggalkan karakter awalnya. Seperti proses metamorphosis, perubahan tersebut selalu melalui proses yang tidak mudah. Begitu banyak rintangan dan tantangan yang harus dilalui dan sampai saat ini proses tersebut belum selesai. Rumah Belajar Q_Sm@rt masih terus berupaya untuk menjadi lebih professional dan berupaya memberikan kontribusi yang lebih besar kepada perkembangan dunia pendidikan saat ini";
+  static String sejarahIsi2 =
+      "        Rahmi Ananta Widya Kristianti, atau yang lebih sering dikenal Mba Amy merupakan pimpinan sekaligus konseptor awal berdirinya sebuah rumah belajar yang diberi nama Rumah Belajar Q_Sm@rt ini. Sebuah Rumah Belajar yang mengasyikkan dan beda dari yang lain.";
+  static String sejarahIsi3 =
+      "Mengapa Q_Sm@rt?\nNama Q_Sm@rt dipilih dikarenakan oleh beberapa faktor. Q disini adalah Quantum yang artinya……sedangkan Sm@rt artinya Cerdas. Jadi diharapkan  siswa yang berada di Rumah Belajar Q_Sm@rt menjadi anak yang cerdas. Mengapa memakai istilah “Rumah”?Penambahan kata “Rumah” bertujuan untuk meninggalkan kesan formal dan memberikan kenyamanan untuk yang berada di dalamnya. Rumah Belajar Q_Sm@rt berusaha mengubah kesan itu dengan menciptakan suasana yang lebih santai dan mengasyikkan. Akan tetapi walaupun meninggalkan kesan formal bukan berarti meninggalkan kualitas pengajaran, karena dengan konsep dan karakter yang dimiliki oleh Rumah Belajar Q_Sm@rt maka output yang dihasilkan oleh rumah belajar ini diharapkan tetap bisa semaksimal mungkin.";
+}
