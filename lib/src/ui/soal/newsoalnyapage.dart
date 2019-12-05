@@ -61,7 +61,7 @@ class NewSoalnyaPage extends StatelessWidget {
                         // title: Text(detilsoal.mapel + detilsoal.kelas),
                         actions: <Widget>[
                           TombolSudahdiUjungKananAppbar(
-                            idsoal: detilsoal.id,
+                            idsoal: idSoalnya,
                             jumlahsoal: snapsut.data.length - 1,
                           )
                         ],

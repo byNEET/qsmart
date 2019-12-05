@@ -48,7 +48,7 @@ class RealdbApi {
         .set(UserNew(
           id: id,
           nama: nama,
-          createat: DateTime.now(),
+          // createat: DateTime.now(),
           pass: id,
         ).toMap())
         .then((_) => print('add user $id suksess isi dua'));
