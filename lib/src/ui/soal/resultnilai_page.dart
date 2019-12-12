@@ -18,10 +18,16 @@ class ResultNilaiPage extends StatelessWidget {
     final soalProv = Provider.of<SoalRepositoryProv>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('result'),
+        title: Text('Hasil'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
         actions: <Widget>[
           RaisedButton(
-            child: Text('Ulangi'),
+            color: Colors.amber,
+            child: Text(
+              'Ulangi',
+              style: TextStyle(color: Colors.black),
+            ),
             onPressed: () {
               jawabanProv.clear();
               Navigator.pushReplacement(
@@ -42,9 +48,9 @@ class ResultNilaiPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Text("nilai: ${jawabanProv.countNilai()}"),
+              Text("Nilai: ${jawabanProv.countNilai()}"),
               Divider(),
-              Text('pembahasan :'),
+              Text('Pembahasan :'),
               Container(
                 child: Column(
                     children: List<Widget>.generate(soalProv.soalnye.length - 1,
@@ -73,6 +79,7 @@ class ResultNilaiPage extends StatelessWidget {
                 height: 50,
               ),
               RaisedButton(
+                color: Colors.green[500],
                 child: Text('OK'),
                 onPressed: () => Navigator.pop(context),
               )

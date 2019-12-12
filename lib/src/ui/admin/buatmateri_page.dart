@@ -12,7 +12,9 @@ class BuatMateriPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(materi == null ? "buat materi" : "edit materi"),
+        title: Text(materi == null ? "Buat Materi" : "Edit Materi"),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
       ),
       body: Tabeditmateri(materi),
     );
@@ -37,7 +39,7 @@ class _TabeditmateriState extends State<Tabeditmateri> {
         child: Column(
           children: <Widget>[
             DropdownButton<String>(
-              hint: Text('pilih tingkat'),
+              hint: Text('Pilih Tingkat'),
               value: materiProv.tingkat,
               onChanged: (val) {
                 materiProv.tingkat = val;
@@ -55,7 +57,7 @@ class _TabeditmateriState extends State<Tabeditmateri> {
                 (materiProv.tingkat == null)
                     ? Container()
                     : DropdownButton<String>(
-                        hint: Text('pilih Mapel'),
+                        hint: Text('Pilih Mapel'),
                         value: materiProv.mapel,
                         onChanged: (val) {
                           materiProv.mapel = val;
@@ -86,17 +88,28 @@ class _TabeditmateriState extends State<Tabeditmateri> {
                       ),
               ],
             ),
-            Card(
+            Container(
+              padding: EdgeInsets.only(right: 14.0, left: 14.0),
               margin: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue),
+                borderRadius: BorderRadius.circular(14),
+              ),
               child: TextField(
-                decoration: InputDecoration(labelText: 'titel'),
+                decoration: InputDecoration(labelText: 'Judul'),
                 controller: materiProv.ttitel,
                 minLines: 2,
                 maxLines: 3,
               ),
             ),
             Divider(),
-            Card(
+            Container(
+              padding: EdgeInsets.only(right: 14.0, left: 14.0),
+              margin: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue),
+                borderRadius: BorderRadius.circular(14),
+              ),
               child: TextField(
                 decoration: InputDecoration(labelText: "isi materi"),
                 controller: materiProv.tisi,
@@ -107,7 +120,7 @@ class _TabeditmateriState extends State<Tabeditmateri> {
             ),
             (widget.materi) == null
                 ? FlatButton(
-                    color: Colors.lightBlue,
+                    color: Colors.green,
                     child: Text('Simpan'),
                     onPressed: () {
                       api
@@ -122,7 +135,7 @@ class _TabeditmateriState extends State<Tabeditmateri> {
                     },
                   )
                 : FlatButton(
-                    color: Colors.lightBlue,
+                    color: Colors.green,
                     child: Text('Edit'),
                     onPressed: () {
                       api

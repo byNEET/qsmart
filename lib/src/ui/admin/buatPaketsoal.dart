@@ -105,9 +105,17 @@ class _BuatPaketSoalPageState extends State<BuatPaketSoalPage> {
                 );
               }).toList(),
             ),
-            TextFormField(
-              controller: bsoal.ttitel,
-              decoration: InputDecoration(labelText: 'titel soal'),
+            Container(
+              margin: EdgeInsets.only(left: 15, right: 15),
+              padding: EdgeInsets.only(left: 15, right: 15),
+              decoration: BoxDecoration(
+                border: Border.all(width: 3, color: Colors.purpleAccent),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: TextFormField(
+                controller: bsoal.ttitel,
+                decoration: InputDecoration(labelText: 'Judul soal'),
+              ),
             ),
             RaisedButton(
               child: isloading ? CircularProgressIndicator() : Text('submit'),

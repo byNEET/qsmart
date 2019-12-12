@@ -1,46 +1,40 @@
-import 'package:qsmart/src/helper/lang.dart';
 import 'package:flutter/material.dart';
+import 'package:qsmart/src/helper/lang.dart';
 
-class Misi extends StatelessWidget {
+class MisiTabbarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 400,
-      padding: EdgeInsets.only(left: 12, right: 12, top: 10),
-      child: Column(
-        children: <Widget>[
-          Center(
-            child: Text(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 25),
+            Text(
               "Misi",
               style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700,
               ),
             ),
-          ),
-          Center(
-            child: Text(
-              "Rumah Belajar Q_SM@RT",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w400,
+            Divider(),
+            Container(
+              padding: EdgeInsets.only(
+                left: 30,
+                right: 30,
+                top: 10,
+                bottom: 10,
+              ),
+              child: Text(
+                Lang.misi,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
-          ),
-          Divider(),
-          Container(
-            padding: EdgeInsets.all(15),
-            child: Text(
-              Lang.misi,
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                fontSize: 14.0,
-                // fontWeight: FontWeight.w300,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

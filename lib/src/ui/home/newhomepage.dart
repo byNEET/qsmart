@@ -226,7 +226,7 @@ class _NewHomePageState extends State<NewHomePage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        TentangIndex()));
+                                        TentangIndexPage()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),

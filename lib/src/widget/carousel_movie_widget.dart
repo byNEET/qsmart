@@ -8,13 +8,17 @@ class CarouselItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(bottom: 20.0),
       width: Screen.width(context),
-      height: 200.0,
+      height: 250.0,
       child: Carousel(
         images: [
-          NetworkImage(
-              'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-          NetworkImage(
-              'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+          AssetImage('images/gallery/1.jpeg'),
+          AssetImage('images/gallery/2.jpeg'),
+          AssetImage('images/gallery/3.jpeg'),
+          AssetImage('images/gallery/5.jpeg'),
+          AssetImage('images/gallery/7.jpeg'),
+          AssetImage('images/gallery/8.jpeg'),
+          AssetImage('images/gallery/9.jpeg'),
+          AssetImage('images/gallery/10.jpeg'),
         ],
         dotSize: 4.0,
         dotSpacing: 15.0,

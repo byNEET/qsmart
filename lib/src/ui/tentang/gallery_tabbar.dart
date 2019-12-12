@@ -1,35 +1,41 @@
-import 'package:qsmart/src/helper/itemListGallery.dart';
 import 'package:flutter/material.dart';
+import 'package:qsmart/src/helper/itemListGallery.dart';
+import 'package:qsmart/src/widget/customImageView.dart';
 
-class Gallery extends StatelessWidget {
-  final ScrollController _scrollController = ScrollController();
+class GalleryTabbarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: GridView.builder(
-        // controller: _scrollController,
-        itemCount: itemListGallery.length,
-        physics: BouncingScrollPhysics(),
+        itemCount: dummyListGallery.length,
+        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: 2.0 / 3.0,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10),
-        padding: EdgeInsets.only(
-          left: 10,
-          right: 10,
-          top: kToolbarHeight + 10,
+          crossAxisCount: 2,
+          // childAspectRatio: 2.0 / 3.0,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black38),
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                image: AssetImage(itemListGallery[index].urlgambar),
-                fit: BoxFit.cover,
+          final gambar = dummyListGallery[index];
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => CustomImageView(
+                            images: gambar.urlgambar,
+                            heroId: gambar.urlgambar,
+                          )));
+            },
+            child: Container(
+              width: 80.0,
+              height: 50.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                image: DecorationImage(
+                  image: AssetImage(gambar.urlgambar),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           );

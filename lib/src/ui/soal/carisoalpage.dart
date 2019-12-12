@@ -41,6 +41,8 @@ class CariSoalPage extends StatelessWidget {
       key: UniqueKey(),
       appBar: AppBar(
         title: Text('Pencarian Soal'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
         actions: <Widget>[],
       ),
       body: SingleChildScrollView(
