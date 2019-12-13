@@ -122,33 +122,41 @@ class _TabeditmateriState extends State<Tabeditmateri> {
                 ? FlatButton(
                     color: Colors.green,
                     child: Text('Simpan'),
-                    onPressed: () {
-                      api
-                          .buatmateri(MateriModel(
-                            tingkat: materiProv.tingkat,
-                            mapel: materiProv.mapel,
-                            kelas: materiProv.kelas,
-                            titel: materiProv.ttitel.text,
-                            isimateri: materiProv.tisi.text,
-                          ))
-                          .then((_) => Navigator.pop(context));
-                    },
+                    onPressed: (materiProv.tingkat == null ||
+                            materiProv.kelas == null ||
+                            materiProv.kelas == null)
+                        ? null
+                        : () {
+                            api
+                                .buatmateri(MateriModel(
+                                  tingkat: materiProv.tingkat,
+                                  mapel: materiProv.mapel,
+                                  kelas: materiProv.kelas,
+                                  titel: materiProv.ttitel.text,
+                                  isimateri: materiProv.tisi.text,
+                                ))
+                                .then((_) => Navigator.pop(context));
+                          },
                   )
                 : FlatButton(
                     color: Colors.green,
                     child: Text('Edit'),
-                    onPressed: () {
-                      api
-                          .buatmateri(MateriModel(
-                            id: widget.materi.id,
-                            tingkat: materiProv.tingkat,
-                            mapel: materiProv.mapel,
-                            kelas: materiProv.kelas,
-                            titel: materiProv.ttitel.text,
-                            isimateri: materiProv.tisi.text,
-                          ))
-                          .then((_) => Navigator.pop(context));
-                    },
+                    onPressed: (materiProv.tingkat == null ||
+                            materiProv.kelas == null ||
+                            materiProv.kelas == null)
+                        ? null
+                        : () {
+                            api
+                                .editmateri(MateriModel(
+                                  id: widget.materi.id,
+                                  tingkat: materiProv.tingkat,
+                                  mapel: materiProv.mapel,
+                                  kelas: materiProv.kelas,
+                                  titel: materiProv.ttitel.text,
+                                  isimateri: materiProv.tisi.text,
+                                ))
+                                .then((_) => Navigator.pop(context));
+                          },
                   )
           ],
         ),

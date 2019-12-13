@@ -191,6 +191,18 @@ class RealdbApi {
         .child('materi/${data.tingkat}/${data.mapel}/${data.id}')
         .set(data.toMap());
   }
+
+  Future<void> publishMateri(MateriModel data) async {
+    await ref
+        .child('materi/${data.tingkat}/${data.mapel}/${data.id}/published')
+        .set(true);
+  }
+
+  Future<void> unpublishMateri(MateriModel data) async {
+    await ref
+        .child('materi/${data.tingkat}/${data.mapel}/${data.id}/published')
+        .set(false);
+  }
 //------------------------------------------------------------admin----------------------------------
 
   Future<List<Listbanksoal>> getListSoal() async {

@@ -4,8 +4,23 @@ import 'package:qsmart/src/provider/materiprov.dart';
 import 'package:qsmart/src/ui/admin/buatmateri_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qsmart/src/service/realdb_api.dart';
 
-class ListMateriAdminPage extends StatelessWidget {
+class ListMateriAdminPage extends StatefulWidget {
+  @override
+  _ListMateriAdminPageState createState() => _ListMateriAdminPageState();
+}
+
+class _ListMateriAdminPageState extends State<ListMateriAdminPage> {
+  final RealdbApi api = RealdbApi();
+
+  void _publishNow(MateriModel data){
+    api.publishMateri(data).then((_){setState(() {});});
+  }
+  void _unpublishNow(MateriModel data){
+    api.unpublishMateri(data).then((_){setState(() {});});
+  }
+
   @override
   Widget build(BuildContext context) {
     final materiProv = Provider.of<MateriProv>(context);
@@ -111,7 +126,7 @@ class ListMateriAdminPage extends StatelessWidget {
                                                           ),
                                                         ],
                                                       ),
-                                                      onPressed: () {},
+                                                      onPressed: ()=>_unpublishNow(data),
                                                     )
                                                   : FlatButton(
                                                       child: Column(
@@ -129,7 +144,7 @@ class ListMateriAdminPage extends StatelessWidget {
                                                                       .white)),
                                                         ],
                                                       ),
-                                                      onPressed: () {},
+                                                      onPressed:()=> _publishNow(data),
                                                     ),
                                             ),
                                           ),
