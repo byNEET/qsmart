@@ -1,6 +1,6 @@
+import 'package:flutter_html/flutter_html.dart';
 import 'package:qsmart/src/model/materi_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tex/flutter_tex.dart';
 
 class DetilMateri extends StatelessWidget {
   final MateriModel materi;
@@ -12,8 +12,8 @@ class DetilMateri extends StatelessWidget {
         title: Text(materi.titel),
       ),
       body: SingleChildScrollView(
-        child: TeXView(
-          teXHTML: materi.isimateri,
+        child: Html(
+          data: materi.isimateri,
         ),
       ),
     );
