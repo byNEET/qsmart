@@ -25,27 +25,26 @@ dependencies:
   cupertino_icons: ^0.1.2
   firebase_database:
   shared_preferences: ^0.5.4+1
-  flutter_tex: ^1.0.9
+  # flutter_tex: ^1.0.9
   fluttertoast: ^3.1.3
-  firebase_auth: 
-  provider: 
-  # google_sign_in: 
+  firebase_auth:
+  provider:
+  # google_sign_in:
   flutter_swiper: ^1.1.6
   screen: ^0.0.5
   carousel_pro:
   flutter_screenutil: ^0.6.0
+  flutter_html:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -54,8 +53,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   # assets:
   assets:
-   - images/
-   - images/gallery/
+    - images/
+    - images/gallery/
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
@@ -75,14 +74,14 @@ flutter:
     - family: CustomIcons
       fonts:
         - asset: images/CustomIcons.ttf
- 
+
     - family: Poppins-Bold
       fonts:
         - asset: images/Poppins-Bold.ttf
- 
+
     - family: Poppins-Medium
       fonts:
-        - asset: images/Poppins-Medium.ttf 
+        - asset: images/Poppins-Medium.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

@@ -1,3 +1,4 @@
+import 'package:flutter_html/flutter_html.dart';
 import 'package:qsmart/src/model/banksoall_quicktype.dart';
 import 'package:qsmart/src/model/listbanksoal_model.dart';
 import 'package:qsmart/src/provider/jawabanprov.dart';
@@ -6,7 +7,6 @@ import 'package:qsmart/src/provider/soalRepositoryProv.dart';
 import 'package:qsmart/src/service/realdb_api.dart';
 import 'package:qsmart/src/ui/soal/resultnilai_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tex/flutter_tex.dart';
 import 'package:provider/provider.dart';
 
 class NewSoalnyaPage extends StatelessWidget {
@@ -218,7 +218,7 @@ class _TabSoalBodyState extends State<TabSoalBody>
         child: Column(
           children: <Widget>[
             //Text("$index. ${soalnye[index].pertanyaan}"),
-            TeXView(teXHTML: widget.soalnye[widget.index].pertanyaan),
+            Html(data: widget.soalnye[widget.index].pertanyaan),
             // PertanyaaRenderSekali(soalnye[index].pertanyaan),
             Container(
               padding: EdgeInsets.only(left: 15.0, right: 15.0),
@@ -230,8 +230,8 @@ class _TabSoalBodyState extends State<TabSoalBody>
                             elevation: 10.0,
                             child: ListTile(
                                 leading: PilihanJwaban(f, widget.index),
-                                title: TeXView(
-                                    teXHTML: widget
+                                title: Html(
+                                    data: widget
                                         .soalnye[widget.index].jawaban[f]),
                                 onTap: () => jawabanProv.addListJawabanAndPoint(
                                     (widget.index).toString(),
