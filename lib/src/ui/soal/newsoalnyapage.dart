@@ -155,7 +155,11 @@ class TombolSudahdiUjungKananAppbar extends StatelessWidget {
                                 Navigator.pop(_);
                                 api
                                     .simpanJawaban(
-                                        idsoal, data, user.userNew.id, nilai)
+                                        idsoal,
+                                        data,
+                                        user.userNew.id,
+                                        nilai,
+                                        user.userNew.nama)
                                     .then((_) {
                                   //jawabanProv.clear();
                                   Navigator.pushReplacement(

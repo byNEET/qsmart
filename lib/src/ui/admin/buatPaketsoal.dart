@@ -119,25 +119,30 @@ class _BuatPaketSoalPageState extends State<BuatPaketSoalPage> {
             ),
             RaisedButton(
               child: isloading ? CircularProgressIndicator() : Text('submit'),
-              onPressed: isloading
+              onPressed: (bsoal.tingkat == null ||
+                      bsoal.kelas == null ||
+                      bsoal.mapel == null ||
+                      bsoal.jenis == null)
                   ? null
-                  : () async {
-                      setState(() {
-                        isloading = true;
-                      });
-                      api.ngetesBuatSoalLangsungPushtapiFalse({
-                        "tingkat": bsoal.tingkat,
-                        "kelas": bsoal.kelas,
-                        "mapel": bsoal.mapel,
-                        "jenis": bsoal.jenis,
-                        "titel": bsoal.ttitel.text,
-                        "published": false,
-                        "createat": DateTime.now().toIso8601String()
-                      }).then((_) {
-                        bsoal.clear();
-                        Navigator.pop(context);
-                      });
-                    },
+                  : isloading
+                      ? null
+                      : () async {
+                          setState(() {
+                            isloading = true;
+                          });
+                          api.ngetesBuatSoalLangsungPushtapiFalse({
+                            "tingkat": bsoal.tingkat,
+                            "kelas": bsoal.kelas,
+                            "mapel": bsoal.mapel,
+                            "jenis": bsoal.jenis,
+                            "titel": bsoal.ttitel.text,
+                            "published": false,
+                            "createat": DateTime.now().toIso8601String()
+                          }).then((_) {
+                            bsoal.clear();
+                            Navigator.pop(context);
+                          });
+                        },
             )
           ],
         ),

@@ -139,14 +139,28 @@ class RealdbApi {
     });
   }
 
-  Future<void> simpanJawaban(
-      String idsoal, Map<String, dynamic> n, String uid, int nilai) async {
+  Future<void> simpanJawaban(String idsoal, Map<String, dynamic> n, String uid,
+      int nilai, String nama) async {
     return db.reference().child('banksoal/$idsoal/selesai/$uid').set({
       "uid": uid,
+      "nama": nama,
       "nilai": nilai,
       "tglselesai": DateTime.now().toIso8601String(),
       "jawabannye": n
     });
+  }
+
+  Future<List<Selesai>> getListNilaiSelesai(String idsoal) async {
+    var data = await ref.child('banksoal/$idsoal/selesai').once();
+    if (data.value != null) {
+      Map oke = data.value;
+      List<Selesai> sip = [];
+      oke.forEach((k, v) => sip.add(Selesai.fromJson(v)));
+      print('yokeisp');
+      return sip;
+    } else {
+      return null;
+    }
   }
 
 //--------------------------------------------------materi-------------------------------------------
