@@ -44,12 +44,12 @@ class InfoGuruIndex extends StatelessWidget {
               urlgambar: infoguru.urlgambar,
               onTap: () {
                 // print('wow');
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetailGuruUI(
-                              infoGuru: infoguru,
-                            )));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => DetailGuruUI(
+                //               infoGuru: infoguru,
+                //             )));
               },
             );
           },

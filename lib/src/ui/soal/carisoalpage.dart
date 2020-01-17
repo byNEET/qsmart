@@ -139,7 +139,7 @@ class CariSoalPage extends StatelessWidget {
                                                                           40,
                                                                       backgroundColor:
                                                                           Colors
-                                                                              .black26,
+                                                                              .cyan,
                                                                       child:
                                                                           Text(
                                                                         snapshot
@@ -148,7 +148,7 @@ class CariSoalPage extends StatelessWidget {
                                                                             .toString(),
                                                                         style: TextStyle(
                                                                             color:
-                                                                                Colors.black),
+                                                                                Colors.white),
                                                                       ))
                                                                   : Container()
                                                               : Container(

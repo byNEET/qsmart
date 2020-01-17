@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qsmart/src/provider/buatPaketSoalProv.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginCasePage(),
+        home: SplashScreen(),
       ),
       providers: [
         ChangeNotifierProvider(builder: (_) => JawabanProv()),
@@ -36,5 +38,54 @@ class MyApp extends StatelessWidget {
         // ),
       ],
     );
+  }
+}
+
+/// Component UI
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+/// Component UI
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+
+  /// Setting duration in splash screen
+  startTime() async {
+    return new Timer(Duration(milliseconds: 4500), NavigatorPage);
+  }
+
+  /// To navigate layout change
+  void NavigatorPage() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => LoginCasePage()));
+  }
+
+  /// Declare startTime to InitState
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
+  /// Code Create UI Splash Screen
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("images/YBfwz.png"), fit: BoxFit.fill)),
+      child: Center(
+        child: Image.asset(
+          "images/logoo.png",
+          width: 250,
+          height: 300,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ));
   }
 }

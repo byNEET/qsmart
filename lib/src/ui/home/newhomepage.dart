@@ -2,6 +2,7 @@
 import 'package:qsmart/src/provider/newloginprov.dart';
 import 'package:qsmart/src/ui/admin/adminhome.dart';
 import 'package:qsmart/src/ui/infoguru/infoguruindex.dart';
+import 'package:qsmart/src/ui/jadwal/jadwal_page.dart';
 import 'package:qsmart/src/ui/materi/listmateri_page.dart';
 import 'package:qsmart/src/ui/soal/carisoalpage.dart';
 import 'package:qsmart/src/ui/tentang/tentangIndex_page.dart';
@@ -25,6 +26,7 @@ class _NewHomePageState extends State<NewHomePage> {
     // final newuserprov = Provider.of<NewLoginProv>(context);
     return SafeArea(
       child: Scaffold(
+        // backgroundColor: Colors.amber,
         appBar: AppBar(
           backgroundColor: Colors.white,
           // bottomOpacity: 0.2,
@@ -37,8 +39,9 @@ class _NewHomePageState extends State<NewHomePage> {
           ),
           centerTitle: true,
           actions: <Widget>[
-            RaisedButton(
-              child: Text("admin"),
+            FlatButton.icon(
+              icon: Icon(Icons.person),
+              label: Text("Admin"),
               onPressed: () => Navigator.push(
                   context, MaterialPageRoute(builder: (_) => AdminHomePage())),
             )
@@ -48,12 +51,11 @@ class _NewHomePageState extends State<NewHomePage> {
           child: Column(
             children: <Widget>[
               CarouselItem(),
-
               Container(
                 padding: EdgeInsets.only(bottom: 10.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(14),
-                  color: Colors.black12,
+                  color: Colors.yellow[700],
                 ),
                 margin: EdgeInsets.all(12.0),
                 child: Column(
@@ -88,19 +90,7 @@ class _NewHomePageState extends State<NewHomePage> {
                               // margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.orange,
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  stops: [
-                                    0.4,
-                                    0.8,
-                                  ],
-                                  colors: [
-                                    Colors.black26,
-                                    Colors.black45,
-                                  ],
-                                ),
+                                color: Colors.cyan,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -109,10 +99,13 @@ class _NewHomePageState extends State<NewHomePage> {
                                     'images/carisoal.png',
                                     height: 40,
                                     width: 40,
+                                    colorBlendMode: BlendMode.lighten,
                                   ),
                                   Text(
                                     'Cari soal',
                                     style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins-Medium",
                                     ),
                                   )
@@ -127,7 +120,7 @@ class _NewHomePageState extends State<NewHomePage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        InfoGuruIndex()));
+                                        JadwalPelajaran()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -136,31 +129,19 @@ class _NewHomePageState extends State<NewHomePage> {
                               height: 100,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.redAccent,
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  stops: [
-                                    0.4,
-                                    0.9,
-                                  ],
-                                  colors: [
-                                    Colors.blue.withOpacity(0.5),
-                                    Colors.blueAccent,
-                                  ],
-                                ),
+                                color: Colors.purple,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'images/panduan.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
+                                  Icon(Icons.schedule,
+                                      size: 35, color: Colors.white),
                                   Text(
-                                    'Info Guru',
+                                    'Jadwal\nPelajaran',
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins-Medium",
                                     ),
                                   ),
@@ -187,19 +168,7 @@ class _NewHomePageState extends State<NewHomePage> {
                               // margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.blueGrey,
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  stops: [
-                                    0.3,
-                                    0.9,
-                                  ],
-                                  colors: [
-                                    Colors.orange[200],
-                                    Colors.orangeAccent,
-                                  ],
-                                ),
+                                color: Colors.green,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -212,6 +181,8 @@ class _NewHomePageState extends State<NewHomePage> {
                                   Text(
                                     'Materi',
                                     style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins-Medium",
                                     ),
                                   ),
@@ -236,19 +207,7 @@ class _NewHomePageState extends State<NewHomePage> {
                               // margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.tealAccent,
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerRight,
-                                  end: Alignment.centerLeft,
-                                  stops: [
-                                    0.3,
-                                    0.8,
-                                  ],
-                                  colors: [
-                                    Colors.redAccent,
-                                    Colors.red[300],
-                                  ],
-                                ),
+                                color: Colors.pink,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -262,6 +221,8 @@ class _NewHomePageState extends State<NewHomePage> {
                                     'Tentang Q Smart',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                       fontFamily: "Poppins-Medium",
                                     ),
                                   ),
@@ -270,82 +231,162 @@ class _NewHomePageState extends State<NewHomePage> {
                             ),
                           ),
                         ),
-
-                        // Column(
-                        //   children: <Widget>[
-                        //     Image.asset(
-                        //       'images/tips.png',
-                        //       height: 40,
-                        //       width: 40,
-                        //     ),
-                        //     Text('tips')
-                        //   ],
-                        // ),
-                        // GestureDetector(
-                        //   onTap: () {
-                        //     Navigator.push(
-                        //         context,
-                        //         MaterialPageRoute(
-                        //             builder: (context) => Tentang()));
-                        //   },
-                        //   child: Column(
-                        //     children: <Widget>[
-                        //       Image.asset(
-                        //         'images/about.png',
-                        //         height: 40,
-                        //         width: 40,
-                        //       ),
-                        //       Text('tentang')
-                        //     ],
-                        //   ),
-                        // ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => CariSoalPage()));
+                            },
+                            child: Container(
+                              width: 145,
+                              height: 100,
+                              // margin: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.teal,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset(
+                                    'images/wisuda.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  Text(
+                                    'Informasi sekolah atau perguruan tinggi',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Poppins-Medium",
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        InfoGuruIndex()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 145,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.blue,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset(
+                                    'images/panduan.png',
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  Text(
+                                    'Info Guru',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Poppins-Medium",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => CariSoalPage()));
+                            },
+                            child: Container(
+                              width: 145,
+                              height: 100,
+                              // margin: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.orange,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.settings,
+                                      size: 35, color: Colors.white),
+                                  Text(
+                                    'Pengaturan',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Poppins-Medium",
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Provider.of<NewLoginProv>(context).usernewLogout();
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 145,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.redAccent,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.exit_to_app,
+                                      size: 35, color: Colors.white),
+                                  Text(
+                                    'Sign Out',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Poppins-Medium",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
                 ),
-              ),
-              // Container(
-              //   padding: EdgeInsets.only(left: 10.0, bottom: 10.0),
-              //   alignment: Alignment.topLeft,
-              //   child: Text(
-              //     'Artikel',
-              //     style: TextStyle(
-              //       fontSize: 20,
-              //       fontFamily: 'Poppins-Bold',
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //   ),
-              // ),
-              // Container(
-              //   margin: EdgeInsets.all(10),
-              //   width: Screen.width(context),
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(10),
-              //     color: Colors.black12,
-              //   ),
-              //   child: Padding(
-              //     padding: const EdgeInsets.all(8.0),
-              //     child: Column(
-              //       children: <Widget>[
-              //         Image.network(
-              //           'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg',
-              //           width: Screen.width(context),
-              //         ),
-              //         Padding(
-              //           padding: const EdgeInsets.all(8.0),
-              //           child: Text(
-              //             'Waw hebat, ini artikel nya gan!',
-              //             style: TextStyle(color: Colors.black, fontSize: 15),
-              //           ),
-              //         )
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              RaisedButton(
-                child: Text('LogOut'),
-                onPressed: () =>
-                    Provider.of<NewLoginProv>(context).usernewLogout(),
               ),
             ],
           ),

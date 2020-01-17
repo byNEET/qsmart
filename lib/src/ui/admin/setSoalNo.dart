@@ -50,7 +50,7 @@ class SetSoalNo extends StatelessWidget {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text("soal no: $nosoal"),
+            title: Text("Soal No: $nosoal"),
             bottom: TabBar(
               onTap: (i) =>
                   SystemChannels.textInput.invokeMethod('TextInput.hide'),

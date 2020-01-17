@@ -36,6 +36,7 @@ class MaterialPoster extends StatelessWidget {
               tag: id,
               child: CircleAvatar(
                 radius: 60.0,
+                backgroundColor: Colors.black12,
                 backgroundImage: AssetImage(urlgambar),
               ),
             ),

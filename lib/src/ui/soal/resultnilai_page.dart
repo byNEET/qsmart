@@ -22,11 +22,11 @@ class ResultNilaiPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.redAccent,
         actions: <Widget>[
-          RaisedButton(
-            color: Colors.amber,
-            child: Text(
+          FlatButton.icon(
+            icon: Icon(Icons.repeat, color: Colors.white),
+            label: Text(
               'Ulangi',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
               jawabanProv.clear();

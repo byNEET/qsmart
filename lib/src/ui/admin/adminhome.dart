@@ -61,8 +61,8 @@ class AdminHomePage extends StatelessWidget {
                             0.7,
                           ],
                           colors: <Color>[
-                            Colors.orangeAccent,
-                            Colors.orange,
+                            Colors.purpleAccent,
+                            Colors.purple,
                           ],
                         ),
                       ),

@@ -28,13 +28,13 @@ class NewSoalnyaPage extends StatelessWidget {
                       'jawaban anda akan dihapus dan tidak akan disimpan...'),
                   actions: <Widget>[
                     FlatButton(
-                      child: Text('Nooo'),
+                      child: Text('Tidak'),
                       onPressed: () {
                         return Navigator.pop(_, false);
                       },
                     ),
                     FlatButton(
-                      child: Text('yess'),
+                      child: Text('Ya'),
                       onPressed: () {
                         Provider.of<JawabanProv>(context).listJawaban.clear();
                         return Navigator.pop(_, true);
@@ -136,8 +136,11 @@ class TombolSudahdiUjungKananAppbar extends StatelessWidget {
     var data = jawabanProv.listJawaban;
     var nilai = jawabanProv.nilai;
     return Container(
-      child: RaisedButton(
-        child: Text('Selesai'),
+      child: FlatButton(
+        child: Text(
+          'Selesai',
+          style: TextStyle(color: Colors.white),
+        ),
         onPressed: (data.length == jumlahsoal)
             ? () async {
                 showDialog(

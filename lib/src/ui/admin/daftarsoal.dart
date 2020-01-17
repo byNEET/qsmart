@@ -49,7 +49,7 @@ class _DaftarSoalAdminPageState extends State<DaftarSoalAdminPage> {
                                   f.titel ?? "",
                                   style: TextStyle(
                                     fontSize: 20.0,
-                                    fontWeight: FontWeight.w300,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
                                 subtitle: Text((f.kelas) ??
