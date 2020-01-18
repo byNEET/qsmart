@@ -36,6 +36,8 @@ dependencies:
   flutter_screenutil: ^0.6.0
   flutter_html:
   google_fonts: ^0.3.2
+  timeago: ^2.0.24
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:

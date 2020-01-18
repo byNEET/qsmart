@@ -1,5 +1,6 @@
 import 'package:qsmart/src/ui/admin/carisoalvadmin.dart';
 import 'package:qsmart/src/ui/admin/daftarsoal.dart';
+import 'package:qsmart/src/ui/admin/informasi/list_informasi_admin_page.dart';
 import 'package:qsmart/src/ui/admin/listmateriadmin_page.dart';
 import 'package:qsmart/src/ui/admin/usermanagementpage.dart';
 import 'package:flutter/material.dart';
@@ -347,60 +348,60 @@ class AdminHomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     Navigator.of(context).push(MaterialPageRoute(
-                  //         builder: (context) => TambahUserPage()));
-                  //   },
-                  //   child: Container(
-                  //     width: 150,
-                  //     height: 100,
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(10),
-                  //       gradient: LinearGradient(
-                  //         begin: Alignment.centerRight,
-                  //         end: Alignment.centerLeft,
-                  //         stops: [
-                  //           0.4,
-                  //           0.7,
-                  //         ],
-                  //         colors: <Color>[
-                  //           Colors.blue[700],
-                  //           Colors.blue,
-                  //         ],
-                  //       ),
-                  //     ),
-                  //     child: Column(
-                  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //       children: <Widget>[
-                  //         Padding(
-                  //           padding: const EdgeInsets.only(left: 10),
-                  //           child: Align(
-                  //             alignment: Alignment.centerLeft,
-                  //             child: Icon(
-                  //               Icons.add_circle_outline,
-                  //               color: Colors.white,
-                  //               size: 30.0,
-                  //             ),
-                  //           ),
-                  //         ),
-                  //         Padding(
-                  //           padding: const EdgeInsets.only(left: 10.0),
-                  //           child: Align(
-                  //             alignment: Alignment.centerLeft,
-                  //             child: Text(
-                  //               'Tambah Murid',
-                  //               style: TextStyle(
-                  //                 color: Colors.white,
-                  //                 fontSize: 17.0,
-                  //               ),
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ListInformasiAdminPage()));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                          begin: Alignment.centerRight,
+                          end: Alignment.centerLeft,
+                          stops: [
+                            0.4,
+                            0.7,
+                          ],
+                          colors: <Color>[
+                            Colors.lime[700],
+                            Colors.lime,
+                          ],
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Icon(
+                                Icons.add_circle_outline,
+                                color: Colors.white,
+                                size: 30.0,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'List Informasi',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],

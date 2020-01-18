@@ -1,15 +1,18 @@
-import 'package:flutter_html/flutter_html.dart';
-import 'package:qsmart/src/model/materi_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:intl/intl.dart';
+import 'package:qsmart/src/ui/informasi/informasi_model.dart';
 
-class DetilMateri extends StatelessWidget {
-  final MateriModel materi;
-  DetilMateri({this.materi});
+class DetilInformasiPage extends StatelessWidget {
+  final InformasiModel data;
+
+  const DetilInformasiPage({Key key, @required this.data}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(materi.mapel + " - " + materi.tingkat),
+        title: Text(DateFormat('yyyy/MM/dd . kk:mm').format(data.updateat)),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10),
@@ -17,14 +20,14 @@ class DetilMateri extends StatelessWidget {
           children: <Widget>[
             Center(
               child: Text(
-                materi.titel,
+                data.titel,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 textAlign: TextAlign.center,
               ),
             ),
             SizedBox(height: 30),
             Html(
-              data: materi.isimateri,
+              data: data.body,
             ),
           ],
         ),

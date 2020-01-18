@@ -17,15 +17,17 @@ class UserNew {
   String nama;
   String pass;
   String tingkat;
+  DateTime createdat;
 
-  UserNew({
-    // this.createat,
-    this.id,
-    this.kelas,
-    this.nama,
-    this.pass,
-    this.tingkat,
-  });
+  UserNew(
+      {
+      // this.createat,
+      this.id,
+      this.kelas,
+      this.nama,
+      this.pass,
+      this.tingkat,
+      this.createdat});
 
   factory UserNew.fromMap(Map<dynamic, dynamic> json) => UserNew(
         // createat: DateTime.parse(json["createat"]),
@@ -52,5 +54,6 @@ class UserNew {
         "nama": nama,
         "pass": pass,
         "tingkat": tingkat,
+        "createdat": DateTime.now().toIso8601String()
       };
 }

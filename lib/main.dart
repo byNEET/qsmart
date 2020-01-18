@@ -49,15 +49,15 @@ class SplashScreen extends StatefulWidget {
 
 /// Component UI
 class _SplashScreenState extends State<SplashScreen> {
-  @override
+  
 
   /// Setting duration in splash screen
   startTime() async {
-    return new Timer(Duration(milliseconds: 4500), NavigatorPage);
+    return new Timer(Duration(milliseconds: 4500), navigatorPage);
   }
 
   /// To navigate layout change
-  void NavigatorPage() {
+  void navigatorPage() {
     Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) => LoginCasePage()));
   }
@@ -70,6 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   /// Code Create UI Splash Screen
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(

@@ -1,7 +1,7 @@
 import 'package:qsmart/src/helper/itemlistguru.dart';
 import 'package:qsmart/src/widget/materialPoster_widget.dart';
 import 'package:flutter/material.dart';
-import '../../../src/ui/infoguru/detailguru.dart';
+// import '../../../src/ui/infoguru/detailguru.dart';
 
 class InfoGuruIndex extends StatelessWidget {
   // InfoGuru infoGuru;

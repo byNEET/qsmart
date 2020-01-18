@@ -1,7 +1,12 @@
 // import 'package:adminkursus/src/helper/Screen.dart';
+import 'dart:convert';
+
 import 'package:qsmart/src/provider/newloginprov.dart';
+import 'package:qsmart/src/service/realdb_api.dart';
 import 'package:qsmart/src/ui/admin/adminhome.dart';
+import 'package:qsmart/src/ui/home/editprofilpage.dart';
 import 'package:qsmart/src/ui/infoguru/infoguruindex.dart';
+import 'package:qsmart/src/ui/informasi/list_informasi_page.dart';
 import 'package:qsmart/src/ui/jadwal/jadwal_page.dart';
 import 'package:qsmart/src/ui/materi/listmateri_page.dart';
 import 'package:qsmart/src/ui/soal/carisoalpage.dart';
@@ -14,6 +19,7 @@ import 'package:qsmart/src/widget/carousel_movie_widget.dart';
 // import 'package:adminkursus/src/widgets/carousel_movie_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NewHomePage extends StatefulWidget {
   @override
@@ -28,6 +34,7 @@ class _NewHomePageState extends State<NewHomePage> {
       child: Scaffold(
         // backgroundColor: Colors.amber,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           // bottomOpacity: 0.2,
           title: Text(
@@ -240,8 +247,8 @@ class _NewHomePageState extends State<NewHomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
                             onTap: () {
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (context) => CariSoalPage()));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ListInformasiPage()));
                             },
                             child: Container(
                               width: 145,
@@ -320,9 +327,15 @@ class _NewHomePageState extends State<NewHomePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
-                            onTap: () {
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              //     builder: (context) => CariSoalPage()));
+                            onTap: () async {
+                              var pref = await SharedPreferences.getInstance();
+                              var akun = pref.getString("akun");
+                              Map user = json.decode(akun);
+                              var anunya = await RealdbApi().getUserDetil(user['id']);
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => EditProfilPage(
+                                        user: anunya,
+                                      )));
                             },
                             child: Container(
                               width: 145,

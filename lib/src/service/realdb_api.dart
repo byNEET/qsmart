@@ -33,13 +33,31 @@ class RealdbApi {
         .then((onValue) => UserNew.fromRealDb(onValue));
   }
 
+  Future<void> ubahPassword(String id, String pass) async {
+    await ref.child('user/$id/pass').set(pass);
+  }
+
 //-----------------user admin------------------------------------
   Future<List<UserNew>> getListUser() async {
     return ref.child('user').once().then((onValue) {
       List<UserNew> litUser = List();
       (onValue.value as Map).forEach((k, v) => litUser.add(UserNew.fromMap(v)));
+      litUser.sort((a, b) => a.id.compareTo(b.id));
       return litUser;
     });
+  }
+
+  Future<String> cekIduser(String id) async {
+    if (id.length < 1) {
+      return "id tidak boleh kosong";
+    } else {
+      var oke = await ref.child('user/$id').once();
+      if (oke.value != null) {
+        return "No anggota sudah ada";
+      } else {
+        return null;
+      }
+    }
   }
 
   Future<void> addUser(String id, String nama) async {
@@ -57,8 +75,12 @@ class RealdbApi {
   Future<void> editUser(String id, Map<String, dynamic> data) async {
     await ref
         .child('user/$id')
-        .set(data)
+        .update(data)
         .then((_) => print('update data user success'));
+  }
+
+  Future<void> resetPass(String id) async {
+    await ref.child('user/$id/pass').set(id);
   }
 
   Future<void> deletUser(String id) async {
@@ -203,7 +225,7 @@ class RealdbApi {
   Future<void> editmateri(MateriModel data) async {
     await ref
         .child('materi/${data.tingkat}/${data.mapel}/${data.id}')
-        .set(data.toMap());
+        .update(data.toMap());
   }
 
   Future<void> publishMateri(MateriModel data) async {
